@@ -30,6 +30,8 @@ class UWCSEA():
 
         with open("directory.json") as file:
             self.fileContent = json.load(file)
+            
+        self.searchByName()
     
     def searchByName(self):
         found = False
@@ -38,6 +40,7 @@ class UWCSEA():
                 self.actualName = person["name"]
                 self.searched = True
                 self.file = person
+                self.getUserID()
                 return True
 
         if not found:
